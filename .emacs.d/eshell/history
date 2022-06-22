@@ -1,0 +1,33 @@
+touch ~/.Xmodmap
+clear
+xmodmap ~/.Xmodmap 
+xmodmap ~/.Xmodmap 
+xmodmap -e "keysym Meta_L = Control_L"
+xmodmap -e "keysym Alt_L = Control_L"
+xmodmap -e 'keycode 37 = Alt_L  ISO_Prev_Group ISO_Prev_Group NoSymbol ISO_Prev_Group' xmodmap -e 'keycode 64 = Control_L' 
+xev
+sudo pacman -S xev
+clear
+clear
+sudo pacman -S xorg-xev
+clear
+chmod u+x ~/.config/autostart/remapkey.sh 
+clear
+ls
+cd ..
+ls
+rm .emacs .emacs\~
+ls
+exit
+ls
+cd
+clear
+ls
+cd Documents/Projects/EditeurTexteNSI/
+clear
+main.py
+./main.py
+chmod +x main.py
+./main.py 
+./main.py 
+./main.py
