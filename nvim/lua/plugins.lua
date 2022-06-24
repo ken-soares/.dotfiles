@@ -22,7 +22,7 @@ return require('packer').startup(function()
 
 	vim.cmd([[
 		colorscheme gruvbox
-		let g:user_emmet_leader_key='<C-,>'
+		let g:user_emmet_leader_key='<C-k>'
 
 		" Coc tab complete
 		function! s:check_back_space() abort
