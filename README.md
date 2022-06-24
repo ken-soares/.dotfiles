@@ -5,12 +5,12 @@ my config files
 Main software that I use:
 - emacs
 - neovim (I use neovim a bit more than emacs)
+- vscode (just kidding, I would never **EVER** touch this thing)
 - openbox 
 - tint2 panel (config not added yet)
 - kitty (config not added yet)
 - tmux (config not added yet)
 - zsh (config not added yet, but pretty much the default manjaro config)
-
 
 ## setup
 ### prerequisites
