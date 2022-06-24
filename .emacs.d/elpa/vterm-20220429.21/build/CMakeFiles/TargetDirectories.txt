@@ -1,5 +1,0 @@
-/home/koneko/.emacs.d/elpa/vterm-20220429.21/build/CMakeFiles/vterm-module.dir
-/home/koneko/.emacs.d/elpa/vterm-20220429.21/build/CMakeFiles/libvterm.dir
-/home/koneko/.emacs.d/elpa/vterm-20220429.21/build/CMakeFiles/run.dir
-/home/koneko/.emacs.d/elpa/vterm-20220429.21/build/CMakeFiles/edit_cache.dir
-/home/koneko/.emacs.d/elpa/vterm-20220429.21/build/CMakeFiles/rebuild_cache.dir
