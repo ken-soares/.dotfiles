@@ -250,7 +250,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(vertico centaur-tabs yasnippet which-key vterm use-package undo-fu sublimity powerline pdf-tools org-superstar org-bullets neotree minimap lsp-java evil-collection emmet-mode eglot dracula-theme doom-modeline dashboard company beacon auto-complete)))
+   '(all-the-icons vertico centaur-tabs yasnippet which-key vterm use-package undo-fu sublimity powerline pdf-tools org-superstar org-bullets neotree minimap lsp-java evil-collection emmet-mode eglot dracula-theme doom-modeline dashboard company beacon auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
