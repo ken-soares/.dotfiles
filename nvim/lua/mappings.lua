@@ -9,3 +9,6 @@ map('n', '<Left>', '<Nop>', opts)
 map('n', '<Right>', '<Nop>', opts)
 map('n', '<Up>', '<Nop>', opts)
 map('n', '<Down>', '<Nop>', opts)
+
+-- for the hhkb
+map('i','<C-f>', '<Esc>', opts)
