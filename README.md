@@ -4,7 +4,7 @@ my config files
 
 Main software that I use:
 - emacs
-- neovim
+- neovim (I use neovim a bit more than emacs)
 - openbox 
 - kitty (config not added yet)
 - tmux (config not added yet)
