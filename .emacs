@@ -33,29 +33,6 @@
 (setq-default indent-tabs-mode nil)
 
 
-(use-package undo-fu)
-;;; Vim Bindings (deactivated by default)
-(use-package evil
-  :demand t
-  :bind (("<escape>" . keyboard-escape-quit))
-  :init
-  ;; allows for using cgn
-  ;; (setq evil-search-module 'evil-search)
-  (setq evil-want-keybinding nil)
-  ;; no vim insert bindings
-  (setq evil-undo-system 'undo-fu)
-  :config
-  (setq evil-insert-state-cursor '("#bd93f9" box))
-  (setq evil-normal-state-cursor '("white" box))
-  (evil-mode 1))
-
-;;; Vim Bindings Everywhere else
-(use-package evil-collection
-  :after evil
-  :config
-  (setq evil-want-integration t)
-  (evil-collection-init))
-
 
 (use-package avy
   :ensure t
