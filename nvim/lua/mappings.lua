@@ -11,4 +11,4 @@ map('n', '<Up>', '<Nop>', opts)
 map('n', '<Down>', '<Nop>', opts)
 
 -- for the hhkb
-map('i','<C-f>', '<Esc>', opts)
+map('i','<C-space>', '<Esc>', opts)
