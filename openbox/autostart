@@ -1,6 +1,6 @@
 tint2 &
 komorebi &
 xmodmap -e "pointer = 3 2 1" &
-xmodmap ~/.Xmodmap &
+setxkbmap -option ctrl:swapcaps
 rofi -show drun &
 

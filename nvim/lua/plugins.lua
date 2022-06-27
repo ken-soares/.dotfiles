@@ -10,6 +10,7 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-tree.lua'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'rinx/nvim-minimap'
+	use 'turbio/bracey.vim'
 
 	--Coc language servers
 	--coc-pyright
