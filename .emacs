@@ -12,19 +12,6 @@
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
-
-;; Code navigation
-
-(use-package ace-window
-:ensure t
-:init
-(progn
-(global-set-key [remap other-window] 'ace-window)
-(custom-set-faces
-'(aw-leading-char-face
-((t (:inherit ace-jump-face-foreground :height 3.0)))))
-))
-
 ;; Adjust indentation settings
 (setq c-default-style "linux"
       c-basic-offset 4
@@ -75,17 +62,16 @@
   :config
   (beacon-mode 1))
 
-(use-package doom-modeline
-    :ensure t
-    :defer t
-    :hook (after-init . doom-modeline-init))
+(use-package vterm-toggle
+  :ensure t
+  :config
+  (global-set-key [f2] 'vterm-toggle))
 
 (use-package org-superstar
   :ensure t)
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (global-display-line-numbers-mode)
-(setq display-line-numbers 'relative)
 (add-hook 'vterm-mode-hook (lambda() (display-line-numbers-mode -1)))
 (dolist (mode '(org-mode-hook
                     term-mode-hook
@@ -101,27 +87,26 @@
 (menu-bar-mode -1)
 (display-time-mode 1)
 (setq display-time-24hr-format t)
-(setq display-time-format "%H:%M:%S")
-(setq display-time-interval 0.0166)
 
 ;; ide-like plugins
 
 (use-package centaur-tabs
   :ensure t
   :config
-  (setq centaur-tabs-set-bar 'over
-	centaur-tabs-set-icons t
-	centaur-tabs-gray-out-icons 'buffer
+  (setq centaur-tabs-set-bar 'left
+        centaur-tabs-style "bar"
+	centaur-tabs-set-icons nil
 	centaur-tabs-height 24
 	centaur-tabs-set-modified-marker t
 	centaur-tabs-modifier-marker "●")
-   (centaur-tabs-mode t))
+  (centaur-tabs-mode t))
 
 (use-package emmet-mode
   :ensure t)
 
 (use-package vterm
   :ensure t)
+(add-hook 'vterm-mode-hook 'centaur-tabs-local-mode)
 
 (use-package neotree
   :ensure t
@@ -154,7 +139,6 @@
   :ensure t)
 
 (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-(add-to-list 'eglot-server-programs '(rust-mode "rust-analyzer"))
 (add-hook 'c++-mode-hook 'eglot-ensure)
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'rust-mode-hook 'eglot-ensure)
@@ -218,19 +202,9 @@
 ;; annoying backups and '#bullshit.crap#'
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (set-keyboard-coding-system nil)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(all-the-icons vertico centaur-tabs yasnippet which-key vterm use-package undo-fu sublimity powerline pdf-tools org-superstar org-bullets neotree minimap lsp-java evil-collection emmet-mode eglot dracula-theme doom-modeline dashboard company beacon auto-complete)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
