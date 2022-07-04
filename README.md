@@ -2,15 +2,16 @@
 my config files
 
 
-Main software that I use:
+Config files you will find here:
 - emacs
-- neovim (I use neovim a bit more than emacs)
+- neovim
 - vscode (just kidding, I would never **EVER** touch this thing)
-- tmux 
-- openbox 
+- openbox
+- kitty
+- i3wm (I almost never use it now as I prefer openbox)
+- i3status (I use tint2 now)
 - tint2 panel (config not added yet)
-- kitty (config not added yet)
-- zsh (config not added yet, but pretty much the default manjaro config)
+- zsh (default manjaro config + some aliases and starship prompt)
 
 ## setup
 ### prerequisites
