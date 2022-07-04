@@ -15,7 +15,9 @@ o.splitright = true
 o.splitbelow = true
 o.updatetime = 50
 o.hidden = true
+o.laststatus = 3
 o.guicursor = ''
+o.mouse = "v" -- Judge if you want.
 
 -- buffer-local options
 bo.tabstop = 4
@@ -29,3 +31,9 @@ wo.nu = true
 wo.wrap = false
 wo.signcolumn = 'yes'
 wo.colorcolumn = '80'
+
+-- highlight trailing whitespaces
+vim.cmd([[
+set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+autocmd BufWritePre * :%s/\s\+$//e
+]])

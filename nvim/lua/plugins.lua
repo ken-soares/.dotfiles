@@ -11,6 +11,7 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'rinx/nvim-minimap'
 	use 'turbio/bracey.vim'
+	use 'preservim/nerdcommenter'
 
 	--Coc language servers
 	--coc-pyright
