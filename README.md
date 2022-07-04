@@ -10,8 +10,8 @@ Config files you will find here:
 - kitty
 - i3wm (I almost never use it now as I prefer openbox)
 - i3status (I use tint2 now)
+- fish (the shell I mainly use)
 - tint2 panel (config not added yet)
-- zsh (default manjaro config + some aliases and starship prompt)
 
 ## setup
 ### prerequisites
