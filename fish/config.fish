@@ -1,6 +1,7 @@
 #!/usr/bin/fish
 
 function fish_greeting
+	pfetch
 	echo “This is the magic item that suppresses my mighty magical powers.\nIf I were ever to take this off, a great catastrophe would surely befall this world…\nWell, that was a lie. I just wear it for looks.”
 end
 
