@@ -1,5 +1,8 @@
+vim.cmd [[packadd packer.nvim]]
+
 return require('packer').startup(function()
 	-- plugins are stored at ~/.local/share/nvim/site/pack/packer/start
+	use 'wbthomason/packer.nvim'
 	use 'morhetz/gruvbox'
 	use 'https://github.com/ap/vim-css-color'
 	use 'https://github.com/neoclide/coc.nvim'
@@ -45,4 +48,5 @@ return require('packer').startup(function()
 		let g:airline_right_alt_sep = ''
 		let g:minimap#window#width = 15
 	]])
+
 end)
