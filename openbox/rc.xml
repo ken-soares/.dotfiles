@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Velnias</name>
+    <name>Raven-Crimson</name>
     <titleLayout>IMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -216,16 +216,6 @@
         <execute>betterlockscreen -l</execute>
       </action>
     </keybind>
-    <!--change layout to colemak-->
-    <keybind key="W-X">
-      <action name="Execute">
-        <execute>/home/koneko/colemak.sh</execute>
-      </action>
-    </keybind>
-    <!--change layout to qwerty intl-->
-    <keybind key="W-Z">
-      <action name="Execute">
-        <execute>/home/koneko/usintl.sh</execute>
       </action>
     </keybind>
     <keybind key="W-Left">        # HalfLeftScreen
@@ -780,7 +770,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>

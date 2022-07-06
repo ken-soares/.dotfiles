@@ -1,5 +1,6 @@
 tint2 &
-komorebi &
+picom &
+feh --no-fehbg --bg-scale /home/koneko/Pictures/beer_wallpaper.jpg &
 xmodmap -e "pointer = 3 2 1" &
 setxkbmap -option ctrl:swapcaps
 rofi -show drun &
