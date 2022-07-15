@@ -49,7 +49,7 @@
 
 (set-frame-parameter (selected-frame) 'alpha-background '(95 . 90))
 (add-to-list 'default-frame-alist '(alpha-background . (95. 90)))
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+(set-face-attribute 'default nil :font "FiraCode Retina" :height 110)
 
 (use-package dracula-theme
   :ensure t
@@ -66,6 +66,21 @@
   :ensure t
   :config
   (global-set-key [f2] 'vterm-toggle))
+
+(setq vterm-toggle-fullscreen-p nil)
+(add-to-list 'display-buffer-alist
+             '((lambda (buffer-or-name _)
+                   (let ((buffer (get-buffer buffer-or-name)))
+                     (with-current-buffer buffer
+                       (or (equal major-mode 'vterm-mode)
+                           (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+                (display-buffer-reuse-window display-buffer-at-bottom)
+                ;;(display-buffer-reuse-window display-buffer-in-direction)
+                ;;display-buffer-in-direction/direction/dedicated is added in emacs27
+                ;;(direction . bottom)
+                ;;(dedicated . t) ;dedicated is supported in emacs27
+                (reusable-frames . visible)
+                (window-height . 0.3)))
 
 (use-package org-superstar
   :ensure t)
@@ -199,6 +214,17 @@
   (setq enable-recursive-minibuffers t))
 
 
+;; faster editing
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
 ;; annoying backups and '#bullshit.crap#'
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -208,3 +234,20 @@
       `((".*" ,temporary-file-directory t)))
 
 (set-keyboard-coding-system nil)
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(multiple-cursors expand-region yasnippet which-key vterm-toggle vertico use-package org-superstar neotree minimap lsp-java emmet-mode eglot dracula-theme dashboard company centaur-tabs beacon)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

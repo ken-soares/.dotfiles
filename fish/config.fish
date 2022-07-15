@@ -4,7 +4,6 @@
 fish_default_key_bindings
 
 function fish_greeting
-	pfetch
 	echo “This is the magic item that suppresses my mighty magical powers.\nIf I were ever to take this off,a great catastrophe would surely befall this world…\nWell, that was a lie. I just wear it for looks.”
 end
 
@@ -20,6 +19,7 @@ alias v "nvim"
 alias sv "sudo nvim"
 
 abbr die "killall kitty"
+abbr expts "expo init -t expo-template-blank-typescript"
 
 # name: sashimi
 function fish_prompt
@@ -94,3 +94,7 @@ end
 function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty 2>/dev/null)
 end
+
+
+
+set -gx PATH "$HOME/.cargo/bin" $PATH;
