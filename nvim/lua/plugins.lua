@@ -15,8 +15,8 @@ return require('packer').startup(function()
 	use 'rinx/nvim-minimap'
 	use 'turbio/bracey.vim'
 	use 'preservim/nerdcommenter'
-	use 'https://github.com/SirVer/ultisnips'
-	use 'https://github.com/epilande/vim-react-snippets'
+	use 'nvim-telescope/telescope.nvim'
+	use 'nvim-lua/plenary.nvim'
 
 	--Coc language servers
 	--coc-pyright
@@ -30,7 +30,6 @@ return require('packer').startup(function()
 	vim.cmd([[
 		colorscheme gruvbox
 		let g:user_emmet_leader_key='<C-k>'
-		let g:UltiSnipsExpandTrigger="<C-l>"
 
 		function! s:check_back_space() abort
 		  let col = col('.') - 1
