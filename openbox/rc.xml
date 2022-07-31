@@ -157,10 +157,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>10</top>
-    <bottom>45</bottom>
-    <left>10</left>
-    <right>10</right>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>TopLeft</position>
@@ -230,7 +230,7 @@
 
     <keybind key="W-Right">       # HalfRightScreen
 	    <action name="UnmaximizeFull"/>
-	    <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>51%</width></action>
+	    <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>52%</width></action>
 	</keybind>
 
     <keybind key="W-Up">          # HalfUpperScreen
