@@ -51,6 +51,7 @@ Write once, debug everywhere.")
 ;; (set-frame-parameter (selected-frame) 'alpha-background '(95 . 90))
 ;; (add-to-list 'default-frame-alist '(alpha-background . (95. 90)))
 
+
 (setq fill-column 80)
 (global-display-fill-column-indicator-mode)
 
@@ -76,7 +77,7 @@ Write once, debug everywhere.")
 
 (setq inhibit-startup-screen t)
 
-; START TABS CONFIG
+;; stolen tabs config
 ;; Create a variable for our preferred tab width
 (setq custom-tab-width 4)
 
@@ -122,12 +123,26 @@ Write once, debug everywhere.")
   '((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
 (global-whitespace-mode) ; Enable whitespace mode everywhere
 
-; END TABS CONFIG
-
 (set-face-attribute 'default nil :font "FiraCode Retina" :height 120)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
 
+
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                vterm-mode-hook
+                shell-mode-hook
+                treemacs-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda() (display-line-numbers-mode 0))))
+
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                vterm-mode-hook
+                shell-mode-hook
+                treemacs-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda() (display-fill-column-indicator-mode 0))))
 
 ;; completion stuff
 
@@ -247,21 +262,6 @@ Write once, debug everywhere.")
   :init
   (persp-mode))
 
-(dolist (mode '(org-mode-hook
-                term-mode-hook
-                vterm-mode-hook
-                shell-mode-hook
-                treemacs-mode-hook
-                eshell-mode-hook))
-  (add-hook mode (lambda() (display-line-numbers-mode 0))))
-
-(dolist (mode '(org-mode-hook
-                term-mode-hook
-                vterm-mode-hook
-                shell-mode-hook
-                treemacs-mode-hook
-                eshell-mode-hook))
-  (add-hook mode (lambda() (display-fill-column-indicator-mode 0))))
 
 
 ;; for emacs keybindings
@@ -282,6 +282,14 @@ Write once, debug everywhere.")
 
 (set-keyboard-coding-system nil)
 
+
+;; keycasting
+(use-package command-log-mode
+  :ensure t)
+
+;;  M-x global-command-log-mode
+;; clm/open-command-log-buffer
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -294,4 +302,4 @@ Write once, debug everywhere.")
      (awk-mode . "awk")
      (other . "stroustrup")))
  '(package-selected-packages
-   '(tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu gruvbox-theme evil-collection darcula-theme)))
+   '(command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu gruvbox-theme evil-collection darcula-theme)))
