@@ -4,5 +4,5 @@ sh /home/koneko/.screenlayout/dualMonitor.sh &
 feh --bg-scale --no-xinerama /home/koneko/Pictures/cropped-3840-1080-1137852.png &
 xmodmap -e "pointer = 3 2 1" &
 setxkbmap -option ctrl:swapcaps
-rofi -show drun &
+emacs --daemon &
 

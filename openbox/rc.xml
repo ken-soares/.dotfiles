@@ -138,13 +138,13 @@
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
-    <popupShow>Nonpixel</popupShow>
+    <popupShow>Always</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
     <!-- 'Center', 'Top', or 'Fixed' -->
     <popupFixedPosition>
       <!-- these are used if popupPosition is set to 'Fixed' -->
-      <x>10</x>
+      <x>center</x>
       <!-- positive number for distance from left edge, negative number for
          distance from right edge, or 'Center' -->
       <y>10</y>
@@ -181,8 +181,7 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-	  <chainQuitKey>C-g</chainQuitKey>
-
+    <chainQuitKey>C-g</chainQuitKey>
     <!-- change volume -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
@@ -198,51 +197,42 @@
       <action name="Execute">
         <execute> pactl set-sink-mute @DEFAULT_SINK@ toggle</execute>
       </action>
-  </keybind>
-
+    </keybind>
     <!--execute rofi-->
     <keybind key="W-P">
       <action name="Execute">
         <execute>rofi -show drun</execute>
       </action>
-  </keybind>
-
-
+    </keybind>
     <!--execute Kitty-->
     <keybind key="W-T">
       <action name="Execute">
         <execute>kitty</execute>
       </action>
   </keybind>
-
-
     <!--lock screen-->
     <keybind key="W-L">
-      <action name="Execute">
-        <execute>betterlockscreen -l</execute>
+		<action name="Execute">
+		  <x>center</x><y>center</y>
+		  <execute>/home/koneko/Documents/Projects/RageQuit/ragequit.py</execute>
       </action>
-  </keybind>
-
+    </keybind>
     <keybind key="W-Left">        # HalfLeftScreen
     <action name="UnmaximizeFull"/>
     <action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>48%</width></action>
 	</keybind>
-
     <keybind key="W-Right">       # HalfRightScreen
 	    <action name="UnmaximizeFull"/>
 	    <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>52%</width></action>
 	</keybind>
-
     <keybind key="W-Up">          # HalfUpperScreen
 	    <action name="UnmaximizeFull"/>
 	    <action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height></action>
 	</keybind>
-
     <keybind key="W-Down">        # HalfLowerScreen
 	    <action name="UnmaximizeFull"/>
 	    <action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action>
 	</keybind>
-
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
