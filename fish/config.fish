@@ -19,6 +19,7 @@ alias v "nvim"
 alias sv "sudo nvim"
 
 abbr die "killall kitty"
+abbr ec "emacsclient -c &"
 abbr expts "expo init -t expo-template-blank-typescript"
 
 # name: sashimi
