@@ -256,6 +256,22 @@ Write once, debug everywhere.")
 (use-package emmet-mode
   :ensure t)
 
+(use-package fzf ;; requires fzf package on system
+  :config
+  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
+        fzf/executable "fzf"
+        fzf/git-grep-args "-i --line-number %s"
+        ;; command used for `fzf-grep-*` functions
+        ;; example usage for ripgrep:
+        ;; fzf/grep-command "rg --no-heading -nH"
+        fzf/grep-command "grep -nrH"
+        ;; If nil, the fzf buffer will appear at the top of the window
+        fzf/position-bottom t
+        fzf/window-height 15))
+
+(global-set-key (kbd "C-c s") 'fzf-find-file)
+
+;; workspaces
 (use-package perspective
   :custom
   (persp-mode-prefix-key (kbd "C-x x"))  ; pick your own prefix key here
@@ -302,4 +318,4 @@ Write once, debug everywhere.")
      (awk-mode . "awk")
      (other . "stroustrup")))
  '(package-selected-packages
-   '(command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu gruvbox-theme evil-collection darcula-theme)))
+   '(fzf command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu gruvbox-theme evil-collection darcula-theme)))
