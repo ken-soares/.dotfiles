@@ -15,8 +15,12 @@
 
 ;; startup
 (setq initial-scratch-message
-"Life is way to short to be coding in Java.
-Write once, debug everywhere.")
+"\"An idiot admires complexity. A genius admires simplicity.
+A physicist tries to make it simple, anyway. An idiot- anything,
+the more complicated it is, the more he will admire it.
+If you make something so clusterfucked he can't understand it,
+he's gonna think you're a god cause' you made it so complicated
+nobody can understand it.\" - Terry A. Davis")
 
 ;; org mode
 
@@ -48,26 +52,30 @@ Write once, debug everywhere.")
 
 ;; visual stuff
 
-;; (set-frame-parameter (selected-frame) 'alpha-background '(95 . 90))
-;; (add-to-list 'default-frame-alist '(alpha-background . (95. 90)))
+;;(set-frame-parameter (selected-frame) 'alpha-background '(95 . 90))
+;;(add-to-list 'default-frame-alist '(alpha-background . (95. 90)))
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
 
 (setq fill-column 80)
 (global-display-fill-column-indicator-mode)
 
-(use-package  dracula-theme ;; darcula-theme otherwise
-  :ensure t)
+;; solarized, dracula, darcula, gruvbox otherwise
+
+(use-package solo-jazz-theme
+  :ensure t
+  :config
+  (load-theme 'solo-jazz t))
 
 (use-package rainbow-mode
   :ensure t)
 
-(use-package powerline
+;;works well with solo-jazz
+(use-package doom-modeline
   :ensure t
-  :config
-  (powerline-vim-theme))
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'dracula t)
+  :init (doom-modeline-mode 1))
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -89,14 +97,15 @@ Write once, debug everywhere.")
   (setq tab-width custom-tab-width))
 
 ;; Hooks to Enable Tabs
+
 (add-hook 'prog-mode-hook 'enable-tabs)
 ;; Hooks to Disable Tabs
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
-
 ;; Language-Specific Tweaks
 (setq-default python-indent-offset custom-tab-width) ;; Python
 (setq-default js-indent-level custom-tab-width);; Javascript
+(setq-default rust-indent-offset custom-tab-width) ;; rust
 
 ;; Making electric-indent behave sanely
 (setq-default electric-indent-inhibit t)
@@ -112,13 +121,14 @@ Write once, debug everywhere.")
 ;; WARNING: This will change your life
 ;; (OPTIONAL) Visualize tabs as a pipe character - "|"
 ;; This will also show trailing characters as they are useful to spot.
+
 (setq whitespace-style '(face tabs tab-mark trailing))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(whitespace-tab ((t (:foreground "#555")))))
+ '(whitespace-tab ((t (:background "#fafafa" :foreground "#ccc")))))
 (setq whitespace-display-mappings
   '((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
 (global-whitespace-mode) ; Enable whitespace mode everywhere
@@ -165,7 +175,6 @@ Write once, debug everywhere.")
 
 ;; language specific configuration
 
-
 ;; rust
 (use-package rust-mode
   :ensure t)
@@ -174,7 +183,7 @@ Write once, debug everywhere.")
           (lambda () (prettify-symbols-mode)))
 
 (setq rust-format-on-save t)
-(define-key rust-mode-map (kbd "C-c C-r") 'rust-run)
+(define-key rust-mode-map (kbd "C-c C-r") 'rust-run) ;; ooh fancy!
 (add-to-list 'eglot-server-programs '(rust-mode-hook "rust-analyzer"))
 (add-hook 'rust-mode-hook 'eglot-ensure)
 
@@ -184,7 +193,7 @@ Write once, debug everywhere.")
 (add-hook 'c++-mode-hook 'eglot-ensure)
 
 ;; python
-(add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook 'eglot-ensure) ;; pip install python-lsp-server
 
 (use-package vertico
   :init
@@ -219,7 +228,7 @@ Write once, debug everywhere.")
                    "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
                    crm-separator)
                   (car args))
-          (cdr args)))
+(cdr args)))
   (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
   ;; Do not allow the cursor in the minibuffer prompt
@@ -256,6 +265,8 @@ Write once, debug everywhere.")
 (use-package emmet-mode
   :ensure t)
 
+
+
 (use-package fzf ;; requires fzf package on system
   :config
   (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
@@ -279,6 +290,10 @@ Write once, debug everywhere.")
   (persp-mode))
 
 
+(use-package smartparens
+  :ensure t
+  :config
+  (smartparens-mode 1))
 
 ;; for emacs keybindings
 (use-package which-key
@@ -318,4 +333,4 @@ Write once, debug everywhere.")
      (awk-mode . "awk")
      (other . "stroustrup")))
  '(package-selected-packages
-   '(fzf command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu gruvbox-theme evil-collection darcula-theme)))
+   '(lsp-java smartparens smartparens-config paredit solo-jazz-theme tomorrow-theme solarized-theme modus-operandi-theme fzf command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu evil-collection)))
