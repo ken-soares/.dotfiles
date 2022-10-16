@@ -1,9 +1,9 @@
 tint2 &
 picom &
 sh /home/koneko/.screenlayout/dualMonitor.sh &
-feh --bg-scale --no-xinerama /home/koneko/Pictures/cropped-3840-1080-1137852.png &
+feh --bg-scale --no-xinerama /home/koneko/.dotfiles/wallpapers/alice.png &
 xmodmap -e "pointer = 3 2 1" &
 ibus-daemon -rd &
 setxkbmap -option ctrl:swapcaps
-emacs --daemon &
+#emacs --daemon &
 
