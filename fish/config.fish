@@ -18,9 +18,7 @@ alias la "ll -a"
 alias v "nvim"
 alias sv "sudo nvim"
 
-abbr die "killall kitty"
-abbr ec "emacsclient -c &"
-abbr expts "expo init -t expo-template-blank-typescript"
+#abbr ec "emacsclient -c &"
 
 # name: sashimi
 function fish_prompt
