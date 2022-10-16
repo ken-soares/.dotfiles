@@ -1,4 +1,3 @@
-;; -*- lexical-binding: t; -*-
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
         ("elpa" . "https://elpa.gnu.org/packages/")))
@@ -12,17 +11,10 @@
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
-
-;; startup
-(setq initial-scratch-message
-"\"An idiot admires complexity. A genius admires simplicity.
-A physicist tries to make it simple, anyway. An idiot- anything,
-the more complicated it is, the more he will admire it.
-If you make something so clusterfucked he can't understand it,
-he's gonna think you're a god cause' you made it so complicated
-nobody can understand it.\" - Terry A. Davis")
-
 ;; org mode
+
+(use-package epresent
+  :ensure t)
 
 (use-package org-superstar
   :ensure t)
@@ -43,39 +35,90 @@ nobody can understand it.\" - Terry A. Davis")
   :config
   (evil-mode 1))
 
-;;; Vim Bindings Everywhere else
+(setq evil-default-cursor (quote (t "#bd93f9"))
+    evil-visual-state-cursor '("#8be9fd" box)
+    evil-normal-state-cursor '("#bd93f9" box)
+    evil-insert-state-cursor '("#f1fa8c" box))
+
+;; Vim Bindings Everywhere else
 (use-package evil-collection
   :after evil
   :config
   (setq evil-want-integration t)
   (evil-collection-init))
 
-;; visual stuff
-
-;;(set-frame-parameter (selected-frame) 'alpha-background '(95 . 90))
-;;(add-to-list 'default-frame-alist '(alpha-background . (95. 90)))
-
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
-
-
 (setq fill-column 80)
 (global-display-fill-column-indicator-mode)
 
-;; solarized, dracula, darcula, gruvbox otherwise
 
-(use-package solo-jazz-theme
+;; visual stuff
+
+;; https://rubjo.github.io/victor-mono/
+(add-to-list 'default-frame-alist '(font . "VictorMono SemiBold" ))
+(set-face-attribute 'default t :font "VictorMono SemiBold")
+(set-face-attribute 'default nil :height 150)
+
+
+;; ligatures
+
+(dolist (char/ligature-re
+         `((?-  . ,(rx (or (or "-->" "-<<" "->>" "-|" "-~" "-<" "->") (+ "-"))))
+           (?/  . ,(rx (or (or "/==" "/=" "/>" "/**" "/*") (+ "/"))))
+           (?*  . ,(rx (or (or "*>" "*/") (+ "*"))))
+           (?<  . ,(rx (or (or "<<=" "<<-" "<|||" "<==>" "<!--" "<=>" "<||" "<|>" "<-<"
+                               "<==" "<=<" "<-|" "<~>" "<=|" "<~~" "<$>" "<+>" "</>"
+                               "<*>" "<->" "<=" "<|" "<:" "<>"  "<$" "<-" "<~" "<+"
+                               "</" "<*")
+                           (+ "<"))))
+           (?:  . ,(rx (or (or ":?>" "::=" ":>" ":<" ":?" ":=") (+ ":"))))
+           (?=  . ,(rx (or (or "=>>" "==>" "=/=" "=!=" "=>" "=:=") (+ "="))))
+           (?!  . ,(rx (or (or "!==" "!=") (+ "!"))))
+           (?>  . ,(rx (or (or ">>-" ">>=" ">=>" ">]" ">:" ">-" ">=") (+ ">"))))
+           (?&  . ,(rx (+ "&")))
+           (?|  . ,(rx (or (or "|->" "|||>" "||>" "|=>" "||-" "||=" "|-" "|>"
+                               "|]" "|}" "|=")
+                           (+ "|"))))
+           (?.  . ,(rx (or (or ".?" ".=" ".-" "..<") (+ "."))))
+           (?+  . ,(rx (or "+>" (+ "+"))))
+           (?\[ . ,(rx (or "[<" "[|")))
+           (?\{ . ,(rx "{|"))
+           (?\? . ,(rx (or (or "?." "?=" "?:") (+ "?"))))
+           (?#  . ,(rx (or (or "#_(" "#[" "#{" "#=" "#!" "#:" "#_" "#?" "#(")
+                           (+ "#"))))
+           (?\; . ,(rx (+ ";")))
+           (?_  . ,(rx (or "_|_" "__")))
+           (?~  . ,(rx (or "~~>" "~~" "~>" "~-" "~@")))
+           (?$  . ,(rx "$>"))
+           (?^  . ,(rx "^="))
+           (?\] . ,(rx "]#"))))
+  (let ((char (car char/ligature-re))
+        (ligature-re (cdr char/ligature-re)))
+    (set-char-table-range composition-function-table char
+                          `([,ligature-re 0 font-shape-gstring]))))
+
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'solo-jazz t))
+  (load-theme 'doom-palenight t))
 
 (use-package rainbow-mode
   :ensure t)
 
-;;works well with solo-jazz
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
+
+;; dashboard
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+
+(setq dashboard-items '((recents  . 5)
+                        (agenda . 5)))
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -83,10 +126,11 @@ nobody can understand it.\" - Terry A. Davis")
 (display-time-mode 1)
 (setq display-time-24hr-format t)
 
-(setq inhibit-startup-screen t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
-;; stolen tabs config
-;; Create a variable for our preferred tab width
+;; random shit
+
 (setq custom-tab-width 4)
 
 ;; Two callable functions for enabling/disabling tabs in Emacs
@@ -97,30 +141,22 @@ nobody can understand it.\" - Terry A. Davis")
   (setq tab-width custom-tab-width))
 
 ;; Hooks to Enable Tabs
-
 (add-hook 'prog-mode-hook 'enable-tabs)
 ;; Hooks to Disable Tabs
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
-;; Language-Specific Tweaks
-(setq-default python-indent-offset custom-tab-width) ;; Python
-(setq-default js-indent-level custom-tab-width);; Javascript
-(setq-default rust-indent-offset custom-tab-width) ;; rust
 
-;; Making electric-indent behave sanely
+
+;; Language-Specific Tweaks
+;;(setq-default python-indent-offset custom-tab-width) ;; Python
+;;(setq-default js-indent-level custom-tab-width);; Javascript
+;;(setq-default rust-indent-offset custom-tab-width) ;; rust
+
 (setq-default electric-indent-inhibit t)
 
-;; Make the backspace properly erase the tab instead of
-;; removing 1 space at a time.
 (setq backward-delete-char-untabify-method 'hungry)
 
-;; (OPTIONAL) Shift width for evil-mode users
-;; For the vim-like motions of ">>" and "<<".
 (setq-default evil-shift-width custom-tab-width)
-
-;; WARNING: This will change your life
-;; (OPTIONAL) Visualize tabs as a pipe character - "|"
-;; This will also show trailing characters as they are useful to spot.
 
 (setq whitespace-style '(face tabs tab-mark trailing))
 (custom-set-faces
@@ -128,15 +164,14 @@ nobody can understand it.\" - Terry A. Davis")
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(whitespace-tab ((t (:background "#fafafa" :foreground "#ccc")))))
+ '(whitespace-tab ((t (:foreground "#ccc")))))
 (setq whitespace-display-mappings
   '((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
 (global-whitespace-mode) ; Enable whitespace mode everywhere
 
-(set-face-attribute 'default nil :font "FiraCode Retina" :height 120)
+
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
-
 
 (dolist (mode '(org-mode-hook
                 term-mode-hook
@@ -153,8 +188,6 @@ nobody can understand it.\" - Terry A. Davis")
                 treemacs-mode-hook
                 eshell-mode-hook))
   (add-hook mode (lambda() (display-fill-column-indicator-mode 0))))
-
-;; completion stuff
 
 (use-package company
   :ensure t
@@ -176,6 +209,7 @@ nobody can understand it.\" - Terry A. Davis")
 ;; language specific configuration
 
 ;; rust
+
 (use-package rust-mode
   :ensure t)
 
@@ -187,6 +221,50 @@ nobody can understand it.\" - Terry A. Davis")
 (add-to-list 'eglot-server-programs '(rust-mode-hook "rust-analyzer"))
 (add-hook 'rust-mode-hook 'eglot-ensure)
 
+
+;; golang
+;; (go install golang.org/x/tools/gopls@latest
+;;  go install golang.org/x/tools/cmd/goimports@latest
+;;  optional: install godoc)
+
+(require 'project)
+
+(use-package go-mode
+  :ensure t)
+
+(defun project-find-go-module (dir)
+  (when-let ((root (locate-dominating-file dir "go.mod")))
+    (cons 'go-module root)))
+
+(cl-defmethod project-root ((project (head go-module)))
+  (cdr project))
+
+(add-hook 'project-find-functions #'project-find-go-module)
+
+(add-hook 'go-mode-hook 'eglot-ensure)
+
+(defun eglot-format-buffer-on-save ()
+  (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
+(add-hook 'go-mode-hook #'eglot-format-buffer-on-save)
+
+
+(setq-default eglot-workspace-configuration
+    '((:gopls .
+        ((staticcheck . t)
+         (matcher . "CaseSensitive")))))
+
+  (add-to-list 'exec-path "~/go/bin/")
+
+(use-package go-mode
+  :ensure t
+  :hook ((go-mode . lsp-deferred)
+         (go-mode . company-mode))
+  :bind (:map go-mode-map
+              ("C-c 6" . gofmt)))
+
+(setq gofmt-command "goimports")
+(global-set-key (kbd "C-c r") #'recompile)
+
 ;; c/c++
 (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
 (add-hook 'c-mode-hook 'eglot-ensure)
@@ -195,15 +273,48 @@ nobody can understand it.\" - Terry A. Davis")
 ;; python
 (add-hook 'python-mode-hook 'eglot-ensure) ;; pip install python-lsp-server
 
+
+;; managing popups
+
+(use-package popper
+  :ensure t ; or :straight t
+  :bind (("C-`"   . popper-toggle-latest)
+         ("M-`"   . popper-cycle)
+         ("C-M-`" . popper-toggle-type))
+  :init
+  (setq popper-reference-buffers
+        '("\\*Messages\\*"
+          "Output\\*$"
+          "\\*Async Shell Command\\*"
+          help-mode
+          compilation-mode))
+  (popper-mode +1)
+  (popper-echo-mode +1))
+
+;; programming things
+
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
+;; makes emacs snappier
+(add-function :after after-focus-change-function
+  (defun me/garbage-collect-maybe ()
+    (unless (frame-focus-state)
+      (garbage-collect))))
+
+(use-package evil-multiedit
+  :ensure t
+  :config
+  (evil-multiedit-default-keybinds))
+
 (use-package vertico
   :init
   (vertico-mode)
 
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
-
   ;; Show more candidates
-  ;; (setq vertico-count 20)
+  (setq vertico-count 8)
 
   ;; Grow and shrink the Vertico minibuffer
   (setq vertico-resize t)
@@ -239,22 +350,16 @@ nobody can understand it.\" - Terry A. Davis")
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t))
 
-
-;; programming things
-
-(use-package tree-sitter-langs
-  :ensure t)
-
-(use-package tree-sitter
-  :config
-  (require 'tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
 (global-set-key (kbd "C-c l") 'compile)
 
 (add-hook 'before-save-hook
           'delete-trailing-whitespace)
+
+(electric-pair-mode 1)
+(setq electric-pair-pairs
+      '(
+        (?\" . ?\")
+        (?\{ . ?\})))
 
 (use-package magit
   :ensure t)
@@ -265,61 +370,22 @@ nobody can understand it.\" - Terry A. Davis")
 (use-package emmet-mode
   :ensure t)
 
-
-
-(use-package fzf ;; requires fzf package on system
-  :config
-  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
-        fzf/executable "fzf"
-        fzf/git-grep-args "-i --line-number %s"
-        ;; command used for `fzf-grep-*` functions
-        ;; example usage for ripgrep:
-        ;; fzf/grep-command "rg --no-heading -nH"
-        fzf/grep-command "grep -nrH"
-        ;; If nil, the fzf buffer will appear at the top of the window
-        fzf/position-bottom t
-        fzf/window-height 15))
-
-(global-set-key (kbd "C-c s") 'fzf-find-file)
-
-;; workspaces
-(use-package perspective
-  :custom
-  (persp-mode-prefix-key (kbd "C-x x"))  ; pick your own prefix key here
-  :init
-  (persp-mode))
-
-
-(use-package smartparens
-  :ensure t
-  :config
-  (smartparens-mode 1))
-
-;; for emacs keybindings
 (use-package which-key
   :ensure t
   :config
   (which-key-mode 1))
 
-(use-package expand-region
-  :bind ("C-=" . er/expand-region))
-
-
-
-;; backups and autosaves which I hate and never want to see ever again thanks
+(use-package fold-this
+  :ensure t
+  :config
+    (global-set-key (kbd "C-c f") 'fold-this)
+    (global-set-key (kbd "C-c u") 'fold-this-unfold-all))
 
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
 (set-keyboard-coding-system nil)
 
-
-;; keycasting
-(use-package command-log-mode
-  :ensure t)
-
-;;  M-x global-command-log-mode
-;; clm/open-command-log-buffer
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -333,4 +399,4 @@ nobody can understand it.\" - Terry A. Davis")
      (awk-mode . "awk")
      (other . "stroustrup")))
  '(package-selected-packages
-   '(lsp-java smartparens smartparens-config paredit solo-jazz-theme tomorrow-theme solarized-theme modus-operandi-theme fzf command-log-mode command-log tree-sitter-langs tree-sitter which-key dracula-theme yasnippet powerline rainbow-mode perspective expand-region emmet-mode vterm magit maggit eglot company vertico use-package undo-fu evil-collection)))
+   '(epresent popper evil-surround evil-multiedit go-mode xterm-color which-key vterm vertico use-package undo-fu tree-sitter-langs solo-jazz-theme solarized-theme smartparens rust-mode rainbow-mode powerline perspective paredit org-superstar magit lsp-java gruvbox-theme fzf fold-this expand-region evil-collection emmet-mode eglot eclim dracula-theme doom-themes doom-modeline dashboard darcula-theme company command-log-mode)))
