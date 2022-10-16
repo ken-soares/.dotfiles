@@ -1,8 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr_die:killall\x20kitty
-SETUVAR _fish_abbr_ec:emacsclient\x20\x2dc\x20\x26
 SETUVAR _fish_abbr_expts:expo\x20init\x20\x2dt\x20expo\x2dtemplate\x2dblank\x2dtypescript
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
