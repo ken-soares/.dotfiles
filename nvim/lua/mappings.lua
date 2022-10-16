@@ -1,16 +1,18 @@
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
+local builtin = require('telescope.builtin')
 
 vim.g.mapleader = ' '
 
-map('n', '<leader>e',':NvimTreeToggle<CR>',opts)
-map('n', '<F8>', ':MinimapToggle<CR>',opts)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', 'ff', builtin.find_files, {})
+vim.keymap.set('n', 'fb', builtin.buffers, {})
+
 map('n', '<Left>', '<Nop>', opts)
 map('n', '<Right>', '<Nop>', opts)
 map('n', '<Up>', '<Nop>', opts)
 map('n', '<Down>', '<Nop>', opts)
-map('n', '<leader>ff', ':Telescope find_files hidden=true<CR>',opts)
 
--- for the hhkb
-map('i','<C-Space>', '<Esc>', opts)
+
+map('n', '<leader>e', '<cmd>Ex<CR>', opts)
 

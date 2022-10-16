@@ -1,13 +1,21 @@
---   ____        ___  __                 _  __
---  /  _/______ / _ \/ /  ___  ___  ___ | |/_/
--- _/ // __/ -_) ___/ _ \/ _ \/ _ \/ -_)>  <  
---/___/\__/\__/_/  /_//_/\___/_//_/\__/_/|_|  
---
--- Author: Kenneth Soares
--- Website: ken-soares.github.io
--- File: nvim/init.lua
--- Last updated: Wed 22 Jun. 09:05PM
-
-require('settings')
 require('plugins')
+require('colors')
+require('line')
 require('mappings')
+
+-- options
+vim.opt.guicursor = ""
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = false
+vim.opt.smartindent = false
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.list = true
+vim.g.mapleader = " "
