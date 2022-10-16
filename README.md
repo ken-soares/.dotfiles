@@ -6,8 +6,8 @@ Config files you will find here:
 
 | software | in use     |
 |----------|------------|
-| emacs    | primary    |
-| neovim   | secondary  |
+| emacs    | secondary  |
+| neovim   | primary    |
 | openbox  | primary    |
 | kitty    | primary    |
 | fish     | primary    |
