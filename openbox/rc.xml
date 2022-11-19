@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Raven-Crimson</name>
+    <name>Fresh-Theme</name>
     <titleLayout>IMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -204,17 +204,23 @@
         <execute>rofi -show drun</execute>
       </action>
     </keybind>
+    <keybind key="W-m">
+      <action name="Execute">
+        <execute>emacsclient -c</execute>
+      </action>
+    </keybind>
     <!--execute Kitty-->
     <keybind key="W-T">
       <action name="Execute">
-        <execute>kitty</execute>
+        <execute>alacritty -e fish</execute>
       </action>
-  </keybind>
+    </keybind>
     <!--lock screen-->
     <keybind key="W-L">
-		<action name="Execute">
-		  <x>center</x><y>center</y>
-		  <execute>/home/koneko/.config/openbox/ragequit.py</execute>
+      <action name="Execute">
+        <x>center</x>
+        <y>center</y>
+        <execute>/home/koneko/.config/openbox/ragequit.py</execute>
       </action>
     </keybind>
     <keybind key="W-Left">        # HalfLeftScreen
@@ -306,7 +312,7 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-q">
+    <keybind key="W-c">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -320,7 +326,7 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="A-Tab">
+    <keybind key="W-j">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
