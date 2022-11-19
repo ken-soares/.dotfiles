@@ -13,7 +13,7 @@ if status is-interactive
 end
 
 #aliases
-alias ll "exa -l -g --icons"
+alias ll "ls -l"
 alias la "ll -a"
 alias v "nvim"
 alias sv "sudo nvim"
