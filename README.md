@@ -9,12 +9,12 @@ Config files you will find here:
 | openbox   | primary    |
 | neovim    | primary    |
 | fish      | primary    |
-| alacritty | primary    |
+| kitty     | primary    |
+| alacritty | secondary  |
 | emacs     | secondary  |
 | tint2     | outdated   |
 | i3wm      | not in use |
 | i3status  | not in use |
-| kitty     | not in use |
 
 ## setup
 ### prerequisites
