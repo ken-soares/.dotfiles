@@ -4,16 +4,17 @@ my config files
 
 Config files you will find here:
 
-| software | in use     |
-|----------|------------|
-| emacs    | secondary  |
-| neovim   | primary    |
-| openbox  | primary    |
-| kitty    | primary    |
-| fish     | primary    |
-| i3wm     | not in use |
-| i3status | not in use |
-| tint2    | primary    |
+| software  | in use     |
+|-----------|------------|
+| openbox   | primary    |
+| neovim    | primary    |
+| fish      | primary    |
+| alacritty | primary    |
+| emacs     | secondary  |
+| tint2     | outdated   |
+| i3wm      | not in use |
+| i3status  | not in use |
+| kitty     | not in use |
 
 ## setup
 ### prerequisites
