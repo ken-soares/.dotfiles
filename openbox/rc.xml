@@ -212,7 +212,7 @@
     <!--execute Kitty-->
     <keybind key="W-T">
       <action name="Execute">
-        <execute>alacritty -e fish</execute>
+        <execute>kitty -e fish</execute>
       </action>
     </keybind>
     <!--lock screen-->
