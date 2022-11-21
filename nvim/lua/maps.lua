@@ -10,6 +10,7 @@ keymap.set('n', '-', '<C-x>')
 
 -- select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap.set('i', '<C-BS>', '<C-w>')
 
 -- new tabs
 keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
