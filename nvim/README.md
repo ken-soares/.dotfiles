@@ -6,5 +6,5 @@ like a keybinding for buffer switching (like ctrl+x b in Emacs) and
 control + backspace for deleting by word. 
 
 Since I had little to no experience using lua, I inspired myself of other ppl's
-configs (mostly [devaslife][https://github.com/craftzdog]) and tweaked the things
+configs (mostly [devaslife](https://github.com/craftzdog)) and tweaked the things
 I did not like.
