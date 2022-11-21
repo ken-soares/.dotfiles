@@ -15,6 +15,7 @@ end
 #aliases
 alias ll "ls -l"
 alias la "ll -a"
+alias t "tree -lCaL 2"
 alias v "nvim"
 alias sv "sudo nvim"
 
