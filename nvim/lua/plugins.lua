@@ -30,10 +30,12 @@ packer.startup(function(use)
     use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in lsp
     use 'hrsh7th/nvim-cmp' -- Completion
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     -- cool plugins
     use 'jiangmiao/auto-pairs' -- auto close parenthesis and other brackets
     use 'andweeb/presence.nvim' -- discord rich presence
+    use 'mattn/emmet-vim' -- complete html tags
 
     -- fuzzy finder
     use 'nvim-lua/plenary.nvim' -- Common utilities

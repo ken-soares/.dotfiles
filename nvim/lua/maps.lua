@@ -35,3 +35,7 @@ end)
 vim.keymap.set('n', '<leader>b', function()
     builtin.buffers()
 end)
+
+
+-- emmet keybindings
+vim.cmd [[let g:user_emmet_leader_key=',']]
