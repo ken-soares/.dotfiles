@@ -65,6 +65,8 @@ protocol.CompletionItemKind = {
 
 nvim_lsp.pyright.setup({})
 
+nvim_lsp.clangd.setup({})
+
 nvim_lsp.rust_analyzer.setup({
     on_attach = on_attach,
     settings = {
@@ -89,7 +91,7 @@ nvim_lsp.rust_analyzer.setup({
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
     cmd = { "typescript-language-server", "--stdio" },
     capabilities = capabilities
 }
@@ -104,7 +106,8 @@ nvim_lsp.sumneko_lua.setup {
         Lua = {
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
+                -- do the same for love2d
+                globals = { 'vim', 'love', 'capabilities' },
             },
 
             workspace = {
