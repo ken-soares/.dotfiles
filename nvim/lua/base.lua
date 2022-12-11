@@ -21,7 +21,9 @@ vim.opt.expandtab = true
 vim.o.incsearch = true
 vim.o.hlsearch = false
 vim.opt.scrolloff = 13
-vim.opt.shell = 'fish'
+vim.opt.shell = 'bash'
+vim.opt.list = true
+vim.opt.listchars = 'tab:⇢ ,lead:·,trail:·'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 
