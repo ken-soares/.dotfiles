@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/koneko/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/koneko/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/koneko/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -139,10 +144,10 @@ _G.packer_plugins = {
     path = "/home/koneko/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-transparent"] = {
+  ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/koneko/.local/share/nvim/site/pack/packer/start/nvim-transparent",
-    url = "https://github.com/xiyaowong/nvim-transparent"
+    path = "/home/koneko/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

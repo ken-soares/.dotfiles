@@ -14,7 +14,6 @@ packer.startup(function(use)
     use 'kyazdani42/nvim-web-devicons' -- File icons
     use 'akinsho/bufferline.nvim' -- tabs
     use 'norcalli/nvim-colorizer.lua' -- css codes
-    use 'xiyaowong/nvim-transparent' -- transparent background toggle
 
     -- lsp related plugins
 
@@ -41,4 +40,7 @@ packer.startup(function(use)
     use 'nvim-lua/plenary.nvim' -- Common utilities
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+
+    --file tree
+    use 'nvim-tree/nvim-tree.lua'
 end)

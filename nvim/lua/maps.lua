@@ -21,6 +21,9 @@ keymap.set('n', '<C-f>l', '<C-w>>')
 keymap.set('n', '<C-f>j', '<C-w>-')
 keymap.set('n', '<C-f>k', '<C-w>+')
 
+
+keymap.set('n', "<leader>t", ':NvimTreeToggle<CR>', { silent = true })
+
 vim.keymap.set('n', '<leader>f',
     function()
         builtin.find_files({
@@ -28,6 +31,7 @@ vim.keymap.set('n', '<leader>f',
             hidden = true
         })
     end)
+
 
 vim.keymap.set('n', '<leader>r', function()
     builtin.live_grep()

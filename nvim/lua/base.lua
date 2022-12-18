@@ -1,5 +1,3 @@
-vim.cmd('autocmd!')
-
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -18,10 +16,10 @@ vim.o.swapfile = false
 vim.o.smartcase = true
 vim.opt.showcmd = true
 vim.opt.expandtab = true
+vim.opt.shell = "bash"
 vim.o.incsearch = true
 vim.o.hlsearch = false
 vim.opt.scrolloff = 13
-vim.opt.shell = 'bash'
 vim.opt.list = true
 vim.opt.listchars = 'tab:⇢ ,lead:·,trail:·'
 vim.opt.inccommand = 'split'
