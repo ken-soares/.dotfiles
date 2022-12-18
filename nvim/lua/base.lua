@@ -7,7 +7,6 @@ vim.wo.number = true
 vim.wo.signcolumn = "number"
 vim.wo.colorcolumn = "80"
 
-vim.opt.title = true
 vim.opt.autoindent = true
 
 vim.opt.backup = false
