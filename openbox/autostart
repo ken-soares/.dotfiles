@@ -2,7 +2,7 @@ tint2 &
 picom &
 
 sh /home/koneko/.screenlayout/two_monitors.sh &
-feh --bg-scale --no-xinerama /home/koneko/.dotfiles/wallpapers/alice.png &
+nitrogen --restore &
 ibus-daemon -rd &
 
 setxkbmap -option ctrl:swapcaps
