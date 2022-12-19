@@ -18,7 +18,7 @@ order += "tztime local"
 
 
 disk "/" {
-        format = "%avail sdb2"
+        format = "%avail at /"
 }
 
 memory {
