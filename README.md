@@ -6,15 +6,17 @@ Config files you will find here:
 
 | software  | in use     |
 |-----------|------------|
-| openbox   | primary    |
 | neovim    | primary    |
-| fish      | primary    |
 | kitty     | primary    |
-| alacritty | secondary  |
-| emacs     | secondary  |
-| tint2     | outdated   |
-| i3wm      | not in use |
-| i3status  | not in use |
+| tmux      | primary    |
+| i3wm      | primary    |
+| i3status  | primary    |
+| bash      | primary    |
+| openbox   | secondary  |
+| tint2     | secondary  |
+| fish      | not in use |
+| emacs     | not in use |
+| alacritty | not in use |
 
 ## setup
 ### prerequisites
