@@ -1,0 +1,308 @@
+["INFO" - 3:13:05 PM] Extension Name: esbenp.prettier-vscode.
+["INFO" - 3:13:05 PM] Extension Version: 9.13.0.
+["INFO" - 3:35:18 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:35:18 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:35:18 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:35:18 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:35:18 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:35:18 PM] Formatting completed in 112ms.
+["INFO" - 3:35:20 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:35:20 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:35:20 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:35:20 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:35:20 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:35:20 PM] Formatting completed in 26ms.
+["INFO" - 3:36:08 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:36:08 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:36:08 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:36:08 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:36:08 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:36:08 PM] Formatting completed in 26ms.
+["INFO" - 3:36:33 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:36:33 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:36:33 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:36:33 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:36:33 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:36:33 PM] Formatting completed in 23ms.
+["INFO" - 3:36:36 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:36:36 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:36:36 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:36:36 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:36:36 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:36:36 PM] Formatting completed in 20ms.
+["INFO" - 3:36:47 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:36:47 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:36:47 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:36:47 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:36:47 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:36:47 PM] Formatting completed in 20ms.
+["INFO" - 3:37:13 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:37:13 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:37:13 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:37:13 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:37:13 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:37:13 PM] Formatting completed in 20ms.
+["INFO" - 3:37:22 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:37:22 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:37:22 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:37:22 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:37:22 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:37:22 PM] Formatting completed in 22ms.
+["INFO" - 3:43:08 PM] Formatting file:///home/koneko/Documents/Projects/react_native_jobs/app/index.js
+["INFO" - 3:43:08 PM] Using ignore file (if present) at /home/koneko/Documents/Projects/react_native_jobs/.prettierignore
+["INFO" - 3:43:08 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 3:43:08 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 3:43:08 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/koneko/Documents/Projects/react_native_jobs/app/index.js",
+  "parser": "babel"
+}
+["INFO" - 3:43:08 PM] Formatting completed in 31ms.

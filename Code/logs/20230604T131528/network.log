@@ -1,0 +1,8 @@
+2023-06-04 13:15:56.675 [error] browser #11: https://vscode-icons-team.vscode-unpkg.net/vscode-icons-team/vscode-icons/12.4.0/extension/package.json - error undefined XHR failed
+2023-06-04 13:15:56.678 [error] browser #10: https://pkief.vscode-unpkg.net/PKief/material-icon-theme/4.28.0/extension/package.json - error undefined XHR failed
+2023-06-04 13:15:56.681 [error] browser #27: https://robbowen.vscode-unpkg.net/RobbOwen/synthwave-vscode/0.1.15/extension/package.json - error undefined XHR failed
+2023-06-04 13:15:56.685 [error] browser #25: https://emmanuelbeziat.vscode-unpkg.net/emmanuelbeziat/vscode-great-icons/2.1.93/extension/package.json - error undefined XHR failed
+2023-06-04 13:16:34.687 [error] browser #60: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2023-06-04 13:16:35.730 [error] browser #62: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2023-06-04 14:19:47.392 [error] electron #92: https://vscode-sync.trafficmanager.net/v1/manifest - error GET net::ERR_NAME_NOT_RESOLVED
+2023-06-04 14:25:23.634 [error] electron #101: https://update.code.visualstudio.com/api/update/linux-x64/stable/b3e4e68a0bc097f0ae7907b217c1119af9e03435 - error undefined net::ERR_NAME_NOT_RESOLVED

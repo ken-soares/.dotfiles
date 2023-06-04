@@ -1,0 +1,42 @@
+import { useState } from "react";
+import { FlatList, Button, StyleSheet, TextInput, View } from "react-native";
+
+import TaskItem from "./components/TaskItem";
+import TaskInput from "./components/TaskInput";
+
+export default function App() {
+  const [tasks, setTasks] = useState([]);
+
+  function addTaskHandler(enteredTaskText) {
+    setTasks((currentTask) => [
+      ...currentTask,
+      { text: enteredTaskText, key: Math.random().toString() },
+    ]);
+  }
+
+  return (
+    <View style={styles.appContainer}>
+      <TaskInput addTaskHandler={addTaskHandler} />
+      <View style={styles.tasksContainer}>
+        <FlatList
+          data={tasks}
+          renderItem={(itemData) => {
+            return <TaskItem text={itemData.item.text} />;
+          }}
+        />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1,
+    paddingTop: 50,
+    paddingHorizontal: 16,
+  },
+
+  tasksContainer: {
+    flex: 4,
+  },
+});

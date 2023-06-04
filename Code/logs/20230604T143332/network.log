@@ -1,0 +1,2 @@
+2023-06-04 17:16:33.590 [error] electron #288: https://vscode-sync.trafficmanager.net/v1/manifest - error GET net::ERR_NAME_NOT_RESOLVED
+2023-06-04 17:41:10.492 [error] electron #315: https://vscode-sync.trafficmanager.net/v1/manifest - error GET net::ERR_NAME_NOT_RESOLVED
