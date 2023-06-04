@@ -2,7 +2,7 @@
 
 set $mod Mod4
 
-font pango:FiraCode 10
+font pango:Cousine Nerd Font 13
 #font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id dex --autostart --environment i3
@@ -32,11 +32,14 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
+# start flameshot
+bindsym $mod+Shift+s exec flameshot
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu 
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb "#1a1b26" -sb "#364A82" -sf "#c0caf5" -fn "FiraCode"
+#dmenu
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # start rofi
 bindsym $mod+p exec --no-startup-id rofi -show drun
 
@@ -79,34 +82,34 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 " "
+set $ws2 " "
+set $ws3 " "
+set $ws4 " "
+set $ws5 " "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -133,48 +136,70 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
 bar {
-        status_command i3status
-
-        colors{
-
-            background #1a1b26
-            statusline #a9b1d6
-            separator  #3a3f4b
-
-            focused_workspace  #3a3f4b #1a1b26 #c678dd
-            active_workspace   #1a1b26 #1a1b26 #acb0d0
-            inactive_workspace #1a1b26 #1a1b26 #abb2bf
-            urgent_workspace   #f7768e #f7768e #fffff
-            binding_mode       #2f343a #900000 #ffffff
-        }
+    position top
+    status_command i3status
+    colors {
+        # bar background color
+        background $base
+        # text color used for blocks that do not have a color specified.
+        statusline $text
+        # workspaces section
+        #                    border    backgr.    text
+        focused_workspace    $surface2 $surface2  $text
+        inactive_workspace   $base    $base      $text
+        active_workspace     $base    $base      $text
+        urgent_workspace     $peach    $peach     $text
+    }
 }
+
+# target                 title     bg      text       indicator  border
+client.focused           $pink     $base   $text      $rosewater $base
+client.focused_inactive  $crust    $base   $text      $rosewater $base
+client.unfocused         $crust    $crust  $surface2  $rosewater $crust
+client.urgent            $peach    $crust  $peach     $overlay0  $crust
+client.placeholder       $overlay0 $crust  $text      $overlay0  $overlay0
+client.background        $base
 
 # aesthetic
 gaps inner 8
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 for_window [class=".*"] border pixel 2
-
-# nice colors (inspired by tokyonight theme)
-            # class	            border background     text      indicator child_border			
-            # background		  n/a   #ffffff       n/a	      n/a	      n/a
-             #focused	    	#4c7899	#285577	   	#ffffff 	#2e9ef4   	#285577
-             #focused_inactive	#333333	#5f676a		#ffffff 	#484e50   	#5f676a
-             #unfocused	    	#333333	#222222	   	#888888 	#292d2e   	#222222
-             #urgent	    	#2f343a	#900000	   	#ffffff 	#900000  	#900000
-             #placeholder      	#000000	#0c0c0c	   	#ffffff 	#000000 	#0c0c0c
-        client.focused          #9aa5ce #364A82 	#c0caf5     #9aa5ce   	#9aa5ce
-        client.focused_inactive #16161d #16161d 	#c0caf5     #16161d   	#16161d
-        client.unfocused        #16161d #16161d 	#c0caf5     #16161d   	#16161d
 
 # startup commands
 
 exec --no-startup-id picom
 exec --no-startup-id /home/koneko/.screenlayout/two_monitors.sh
 exec --no-startup-id ibus-daemon -rd
-exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id xkbset accessx sticky -twokey -latchlock
 exec --no-startup-id xkbset exp 1 =accessx =sticky =twokey =latchlock
-exec --no-startup-id flameshot
+

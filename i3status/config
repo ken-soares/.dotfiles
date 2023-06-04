@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 20 
+        interval = 20
 }
 
 order += "memory"
@@ -18,23 +18,23 @@ order += "tztime local"
 
 
 disk "/" {
-        format = "%avail at /"
+        format = " %avail at /"
 }
 
 memory {
-        format = "%used used  %available available"
+        format = " %used RAM used, %available available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 volume master {
-        format = "master: %volume"
-        format_muted = "master: MUTED"
+        format = " %volume"
+        format_muted = " MUTED"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 tztime local {
-        format = "%d/%m/%Y %H:%M  "
+        format = "  %d/%m/%Y  %H:%M "
 }
