@@ -7,7 +7,7 @@ Config files you will find here:
 - bash
 - tmux
 - neovim
-- vs code
+- VS Code
 - i3 and i3status
 
 ## setup

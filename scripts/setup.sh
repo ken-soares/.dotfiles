@@ -1,7 +1,7 @@
 #!/bin/sh
 
-homeDirConfigs=(".tmux.conf", ".bashrc")
-configDirConfigs=("nvim", "i3", "i3status", "Code")
+homeDirConfigs=(".tmux.conf" ".bashrc")
+configDirConfigs=("nvim" "i3" "i3status")
 installCommand="dnf install"
 
 # vs code key and repository installation
@@ -35,3 +35,7 @@ done
 for el in ${configDirConfigs}; do
     ln -s $HOME/.dotfiles/$el ~/.config
 done
+
+# for vs code
+ln -s $HOME/.dotfiles/vscode/settings.json ~/.config/Code/User
+ln -s $HOME/.dotfiles/vscode/keybindings.json ~/.config/Code/User
