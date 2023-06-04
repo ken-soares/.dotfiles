@@ -2,15 +2,18 @@
 
 homeDirConfigs=(".tmux.conf", ".bashrc")
 configDirConfigs=("nvim", "i3", "i3status", "Code")
-
+installCommand="dnf install"
 
 # vs code key and repository installation
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+if [ $installCommand = "dnf install" ]
+then
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+fi
 
 # install all software
 echo "installing software"
-sudo dnf install neovim tmux i3 i3status code
+sudo $installCommand neovim tmux i3 i3status code
 
 echo "downloading plugin managers"
 # install tmp for tmux
