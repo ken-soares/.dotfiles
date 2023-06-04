@@ -33,7 +33,6 @@ alias "ll"="ls -l"
 alias "t"="tree -lCaL 2"
 alias "m"="ls | grep"
 alias "p"="bash ~/.dotfiles/scripts/projects.sh"
-alias "fetch"="echo -e '\n$(bunnyfetch)'"
 alias "tk"="tmux kill-session"
 
 
