@@ -1,33 +1,39 @@
-# .dotfiles
-my config files
+<h1><b>.dotfiles🔥</b></h1>
 
+my config files
 
 Config files you will find here:
 
-| software  | in use     |
-|-----------|------------|
-| neovim    | primary    |
-| kitty     | primary    |
-| tmux      | primary    |
-| i3wm      | primary    |
-| i3status  | primary    |
-| bash      | primary    |
-| openbox   | secondary  |
-| tint2     | secondary  |
-| fish      | not in use |
-| emacs     | not in use |
-| alacritty | not in use |
+- bash
+- tmux
+- neovim
+- vs code
+- i3 and i3status
 
 ## setup
-### prerequisites
-- the piece of software needed
-- git
 
-### example with emacs
+### manual
+
+prerequisites:
+
+- git
+- the software which uses the config
+
+example with neovim on Fedora Linux
 
 ```bash
+sudo dnf install neovim
 cd ~
 git clone https://github.com/ken-soares/.dotfiles.git
-cd .config
-ln -s ~/.dotfiles/.emacs .emacs
+ln -s ~/.dotfiles/nvim ~/.config
+```
+
+### auto
+
+Default uses Fedora Linux's dnf package manager
+
+```bash
+git clone https://github.com/ken-soares/.dotfiles.git
+chmod +x .dotfiles/scripts/setup.sh
+./.dotfiles/scripts/setup.sh
 ```
