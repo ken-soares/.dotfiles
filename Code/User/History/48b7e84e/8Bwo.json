@@ -1,8 +1,0 @@
-{
-    "workbench.colorTheme": "Catppuccin Mocha Darker Bordered",
-    "editor.fontFamily": "'VictorMono', 'monospace', monospace",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 16,
-    "vim.smartRelativeLine": true,
-    "editor.renderWhitespace": "all"
-}

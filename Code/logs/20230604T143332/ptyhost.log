@@ -1,7 +1,0 @@
-2023-06-04 14:33:42.027 [warning] Persistent process "1": Process had no disconnect runners but was an orphan
-2023-06-04 14:33:42.027 [info] Persistent process reconnection "1"
-2023-06-04 14:33:42.057 [info] Persistent process "1": Replaying 2493 chars and 1 size events
-2023-06-04 17:36:05.386 [info] Persistent process reconnection "2"
-2023-06-04 17:36:05.415 [info] Persistent process reconnection "3"
-2023-06-04 17:36:05.434 [info] Persistent process "2": Replaying 304 chars and 1 size events
-2023-06-04 17:36:05.773 [info] Persistent process "3": Replaying 10571 chars and 1 size events
