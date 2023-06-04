@@ -33,3 +33,5 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.guicursor = "a:blinkon100"
+
+vim.g.timeoutlen = 1000

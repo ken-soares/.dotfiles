@@ -10,7 +10,7 @@ packer.startup(function(use)
 
     -- aesthetic related plugins
     use 'hoob3rt/lualine.nvim' -- status line
-    use 'folke/tokyonight.nvim' -- color theme
+    use { "catppuccin/nvim", as = "catppuccin" } -- color theme
     use 'kyazdani42/nvim-web-devicons' -- File icons
     use 'akinsho/bufferline.nvim' -- tabs
     use 'norcalli/nvim-colorizer.lua' -- css codes
@@ -35,10 +35,13 @@ packer.startup(function(use)
     use 'jiangmiao/auto-pairs' -- auto close parenthesis and other brackets
     use 'andweeb/presence.nvim' -- discord rich presence
     use 'mattn/emmet-vim' -- complete html tags
+    use {
+        'wthollingsworth/pomodoro.nvim',
+        requires = 'MunifTanjim/nui.nvim'
+    }
 
     -- fuzzy finder
     use 'nvim-lua/plenary.nvim' -- Common utilities
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
-
 end)

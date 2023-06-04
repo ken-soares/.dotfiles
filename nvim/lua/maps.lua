@@ -10,20 +10,19 @@ keymap.set('n', '-', '<C-x>')
 
 -- select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
-keymap.set('i', '<C-BS>', '<C-w>')
+keymap.set('i', '<C-y>', '<C-w>')
+keymap.set('c', '<C-y>', '<C-w>')
 
 -- new tabs
 keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
 
-
+-- resize tabs
 keymap.set('n', '<C-f>h', '<C-w><')
 keymap.set('n', '<C-f>l', '<C-w>>')
 keymap.set('n', '<C-f>j', '<C-w>-')
 keymap.set('n', '<C-f>k', '<C-w>+')
 
-
-keymap.set('n', "<leader>t", ':NvimTreeToggle<CR>', { silent = true })
-
+-- find files
 vim.keymap.set('n', '<leader>f',
     function()
         builtin.find_files({
