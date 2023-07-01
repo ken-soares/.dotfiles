@@ -1,18 +1,26 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha Darker",
-    "editor.fontFamily": "'Victor Mono Semibold', 'monospace', monospace",
-    "editor.fontSize": 18,
-    "editor.renderWhitespace": "all",
-    "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling": true,
-    "terminal.integrated.smoothScrolling": true,
-    "editor.fontLigatures": true,
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+  "editor.fontFamily": "'Victor Mono Semibold', 'monospace', monospace",
+  "editor.fontSize": 18,
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "all",
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.fontLigatures": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.smartRelativeLine": true,
+  "workbench.colorTheme": "Iceberg",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
